@@ -12,7 +12,7 @@ usage() {
 start() {
     echo "Starting..."
     pip install -r requirements.txt
-    python3 chatdemo.py
+    python chatdemo.py
 }
 stop() {
     echo "Stoping..."
