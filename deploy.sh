@@ -21,7 +21,7 @@ usage() {
 
 start() {
     echo "Starting..."
-    python3 chatdemo.py&
+    python3 chatdemo.py &
 }
 stop() {
     echo "Stoping..."
