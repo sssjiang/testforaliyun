@@ -1,11 +1,12 @@
 #!/bin/bash
 if [ ! -d ~/pythonenv ]; then
     mkdir -p ~/pythonenv
+    cd ~/pythonenv
+    python3 -m venv env
+    source env/bin/activate
 fi
 
-cd ~/pythonenv
-python3 -m venv env
-source env/bin/activate
+
 
 cd $(dirname $0)
 
