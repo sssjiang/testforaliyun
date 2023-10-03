@@ -11,8 +11,7 @@ usage() {
 
 start() {
     echo "Starting..."
-    pip install -r requirements.txt
-    python chatdemo.py
+    python3 chatdemo.py
 }
 stop() {
     echo "Stoping..."
