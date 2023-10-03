@@ -7,7 +7,7 @@ if [ ! -d ~/pythonenv ]; then
 fi
 
 
-
+cd /home/admin/application
 cd $(dirname $0)
 
 ACTION=$1
