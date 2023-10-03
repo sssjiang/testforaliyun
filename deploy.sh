@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ -n "$VIRTUAL_ENV" ]; then
+    echo "Python virtual environment is activated."
+else
+    echo "Python virtual environment is not activated."
+fi
 cd $(dirname $0)
 
 ACTION=$1
