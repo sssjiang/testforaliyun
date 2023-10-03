@@ -5,7 +5,7 @@ if [ -n "$VIRTUAL_ENV" ]; then
 else
     echo "Python virtual environment is not activated."
 fi
-cd $(dirname $0)
+cd /home/admin/application
 
 ACTION=$1
 
