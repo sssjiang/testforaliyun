@@ -1,13 +1,5 @@
 #!/bin/bash
 
-cd /home/admin/pythonenv
-source env/bin/activate
-if [ -n "$VIRTUAL_ENV" ]; then
-    echo "Python virtual environment is activated."
-else
-    echo "Python virtual environment is not activated."
-fi
-
 cd /home/admin/application
 echo "Current directory: $(pwd)"
 
