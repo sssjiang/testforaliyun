@@ -22,7 +22,7 @@ start() {
     echo "Starting..."
     python3 chatdemo.py &
     echo "Start..."
-    dactivate
+    deactivate
 }
 stop() {
     echo "Stoping..."
