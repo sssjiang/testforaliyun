@@ -1,3 +1,4 @@
+#!/bin/bash
 if [ ! -d /home/admin/pythonenv ]; then
     mkdir -p /home/admin/pythonenv
 
