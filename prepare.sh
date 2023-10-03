@@ -6,7 +6,7 @@ echo "Current directory: $(pwd)"
 cd ~/pythonenv
 python3 -m venv env
 source env/bin/activate
-pip3 install -r requirements.txt
+pip3 install -r /home/admin/application/requirements.txt
 if [ -n "$VIRTUAL_ENV" ]; then
     echo "Python virtual environment is activated."
 else
