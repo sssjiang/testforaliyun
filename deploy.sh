@@ -1,7 +1,6 @@
 #!/bin/bash
 
 cd /home/admin/pythonenv
-python3 -m venv env
 source env/bin/activate
 if [ -n "$VIRTUAL_ENV" ]; then
     echo "Python virtual environment is activated."
@@ -22,8 +21,8 @@ usage() {
 start() {
     echo "Starting..."
     python3 chatdemo.py &
-    exit 10
     echo "Start..."
+    dactivate
 }
 stop() {
     echo "Stoping..."
