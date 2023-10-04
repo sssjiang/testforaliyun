@@ -1,6 +1,8 @@
 #!/bin/bash
+cd /home/admin/pythonenv
+source env/bin/activate
 
-cd /home/admin/application
+cd /home/admin/app
 echo "Current directory: $(pwd)"
 
 ACTION=$1
@@ -12,7 +14,7 @@ usage() {
 
 start() {
     echo "Starting..."
-    python3 chatdemo.py &
+    python /home/admin/app/chatdemo.py > output.log 2>&1 &
     echo "Start..."
 }
 stop() {
