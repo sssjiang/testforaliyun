@@ -4,7 +4,7 @@ source env/bin/activate
 pip install -r /home/admin/app/requirements.txt
 cd /home/admin/app
 echo "Current directory: $(pwd)"
-
+PY_FILE="/home/admin/app/chatdemo.py"
 ACTION=$1
 admin=$2
 password=$3
@@ -15,7 +15,8 @@ usage() {
 
 start() {
     echo "Starting..."
-    python /home/admin/app/chatdemo.py $admin $password > output.log 2>&1 &
+    pkill -f "python $PY_FILE"
+    python $PY_FILE $admin $password > output.log 2>&1 &
     echo "Start..."
 }
 stop() {
