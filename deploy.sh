@@ -15,7 +15,7 @@ usage() {
 
 start() {
     echo "Starting..."
-    python /home/admin/app/chatdemo.py admin password > output.log 2>&1 &
+    python /home/admin/app/chatdemo.py $admin $password > output.log 2>&1 &
     echo "Start..."
 }
 stop() {
