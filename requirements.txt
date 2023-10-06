@@ -8,3 +8,4 @@ safety
 six
 urllib3
 tornado
+pymongo
