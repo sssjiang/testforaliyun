@@ -1,12 +1,13 @@
 #!/bin/bash
 cd /home/admin/pythonenv
 source env/bin/activate
-
+pip install -r /home/admin/app/requirements.txt
 cd /home/admin/app
 echo "Current directory: $(pwd)"
 
 ACTION=$1
-
+admin=$mongodbuser
+password=$mongodbpassword
 usage() {
     echo "Usage: $PROG_NAME {start|stop|restart}"
     exit 2
@@ -14,7 +15,7 @@ usage() {
 
 start() {
     echo "Starting..."
-    python /home/admin/app/chatdemo.py > output.log 2>&1 &
+    python /home/admin/app/chatdemo.py admin password > output.log 2>&1 &
     echo "Start..."
 }
 stop() {

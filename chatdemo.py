@@ -13,7 +13,7 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
-
+from pymongo import MongoClient
 import asyncio
 import tornado.escape
 import tornado.ioloop
@@ -21,11 +21,33 @@ import tornado.locks
 import tornado.web
 import os.path
 import uuid
-
+import sys
 from tornado.options import define, options, parse_command_line
 
+username = sys.argv[1]
+password = sys.argv[2]
 define("port", default=8080, help="run on the given port", type=int)
 define("debug", default=True, help="run in debug mode")
+
+
+def mongodb_add():
+    client = MongoClient("mongodb://%s:%s@139.198.9.130:27017" %
+                         (username, password))
+    database = client["dp2"]
+    collection = database["documents"]
+
+    # Created with Studio 3T, the IDE for MongoDB - https://studio3t.com/
+    indata = {
+        "Drug_id": "1"
+    }
+    data = {
+        "project_name": "test_test",
+        "uniqueId": 1,
+        "data": indata,
+    }
+    # insert
+    collection.insert_one(data)
+    client.close()
 
 
 class MessageBuffer(object):
@@ -51,7 +73,7 @@ class MessageBuffer(object):
     def add_message(self, message):
         self.cache.append(message)
         if len(self.cache) > self.cache_size:
-            self.cache = self.cache[-self.cache_size :]
+            self.cache = self.cache[-self.cache_size:]
         self.cond.notify_all()
 
 
@@ -109,6 +131,7 @@ class MessageUpdatesHandler(tornado.web.RequestHandler):
 
 def main():
     parse_command_line()
+    mongodb_add()
     app = tornado.web.Application(
         [
             (r"/", MainHandler),
