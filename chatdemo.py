@@ -31,6 +31,7 @@ define("debug", default=True, help="run in debug mode")
 
 
 def mongodb_add():
+    print(username, password)
     client = MongoClient("mongodb://%s:%s@139.198.9.130:27017" %
                          (username, password))
     database = client["dp2"]
