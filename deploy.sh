@@ -6,8 +6,8 @@ cd /home/admin/app
 echo "Current directory: $(pwd)"
 
 ACTION=$1
-admin=$mongodbuser
-password=$mongodbpassword
+admin=$2
+password=$3
 usage() {
     echo "Usage: $PROG_NAME {start|stop|restart}"
     exit 2
